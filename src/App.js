@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
 
-import plusIcon from './assets/plus.svg'
-import deleteIcon from './assets/delete.svg'
-
 import { faTrash, faEdit, faPaperPlane, faPlusCircle, faBookDead } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -98,10 +95,13 @@ const App = () => {
                     <button type='submit' className='plus__holder'>
                         <FontAwesomeIcon className='plus' icon={faPlusCircle}/>
                     </button>
+                    
+                    {/* <h1>hello I'm Reydel 😜 <br/>
+                 welcome to my todolist made in React 😎 <br/>
+                I hope u like it 👌</h1> */}
                 </form>
                 <div className='main__body'>
-                {todos.map((hey) =>
-                 <div className={hey.status === true ? 'todoDone' : 'todoShit'} key={hey.id}>
+                {todos.map((hey) => <div className={hey.status === true ? 'todoDone' : 'todoShit'} key={hey.id}>
                     {edit === hey.id ? 
                     (<input type='text' onChange={(e) => setEditText(e.target.value)} value={editText}>
                     </input>) 
@@ -122,9 +122,8 @@ const App = () => {
                         (<button onClick={() => remove(hey.id)}>
                          <FontAwesomeIcon className='trash' icon={faTrash}/>
                          </button>)} 
-                     </div>
-
-                </div>)}
+                        </div>
+                    </div>)}
                 </div>
             </div>
         </div>
