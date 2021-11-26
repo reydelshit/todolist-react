@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+:root{
+
+    --main-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-cyan: hsl(186, 14%, 43%);
+    --semi-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --semilight-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    
+    --main-font-poppins345: 'Poppins', sans-serif;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    background: var(--light-grayish-cyan);
+}
+
+.main{
+
+    width: 30rem;
+    height: 35rem;
+    border: 1px solid var(--main-cyan);
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+.main__holder{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1em;
+    background: var(--White);
+    position: relative;
+}
+
+form{
+    
+    width: 100%;
+    
+}
+
+form input[type='text']{
+
+    width: 90%;
+    height: 3rem;
+    padding: 0 1em;
+    cursor: auto;
+    outline: none;
+    border: 1px solid var(--main-cyan);
+    border-radius: 6px;
+    background: var(--semilight-grayish-cyan);
+
+    font-size: 1rem;
+    font-family: var(--main-font-poppins345);
+  
+    
+}
+
+button{
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.main__body{
+
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 0 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(172, 67%, 45%) rgb(255, 255, 255);
+}
+
+/* chrome scroll bar */
+
+.main__body::-webkit-scrollbar{
+    width: 0.6vw;
+    margin-left: 5rem;
+}
+
+.main__body::-webkit-scrollbar-thumb{ 
+
+    border-radius: 8px;
+    background-color: var(--main-cyan);
+    background-image: linear-gradient(315deg, hsl(172, 67%, 45%) 0%, hsl(172, 67%, 45%) 74%); 
+}
+
+/* ///////////////// */
+
+.todoShit{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    color: var(--White);
+    font-family: var(--main-font-poppins345);
+    font-weight: 400;
+    background-color: var(--very-dark-cyan);
+    border-radius: 5px;
+    padding: 0.7em 1em;
+    position: relative;
+}
+
+.todoDone{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    color: var(--White);
+    font-family: var(--main-font-poppins345);
+    font-weight: 400;
+    background-color: var(--very-dark-cyan);
+    border-radius: 5px;
+    padding: 0.7em 1em;
+    position: relative;
+
+}
+
+.todoDone::before{
+
+    content: '';
+    text-align: center;
+    position: absolute;
+    background-color: var(--semi-cyan);
+    z-index: 1;
+    width: 70%;
+    height: 2px;
+
+}
+
+
+.todoShit input[type='text']{
+
+    width: 75%;
+    height: 100%;
+    padding: 1em;
+    cursor: auto;
+    outline: none;
+    border: 1px solid var(--main-cyan);
+    border-radius: 6px;
+    background: var(--semilight-grayish-cyan);
+
+    font-size: 1rem;
+    font-family: var(--main-font-poppins345);
+}
+
+.todoShit input[type='checkbox'], .todoDone input[type='checkbox']{
+
+    cursor: pointer;
+    accent-color: var(--main-cyan);
+}
+
+
+.todoShit:hover, .todoDone:hover{
+
+    color: var(--very-dark-cyan);
+    background-color: var(--main-cyan);
+}
+
+.todo__title{
+
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+}
+
+.todos__feature {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    width: 7rem;
+    height: 100%;
+
+}
+
+.trash, 
+.edit, 
+.submit{
+    font-size: 1rem;
+    color: var(--White);
+    cursor: pointer;
+}
+
+.trash:hover, 
+.edit:hover,
+.submit:hover{
+    color: var(--very-dark-cyan);
+}
+
+.plus__holder{
+
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.plus{
+    
+    font-size: 1.7rem;
+    color: var(--very-dark-cyan);
+}
+
+.plus:hover{
+    
+    color: var(--main-cyan);
+}
+
