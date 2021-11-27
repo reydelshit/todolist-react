@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
+import Footer from './Footer'
 
-import { faTrash, faEdit, faPaperPlane, faPlusCircle, faBookDead } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faEdit, faPaperPlane, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -11,9 +12,6 @@ const App = () => {
     const [todo, setTodo] = useState('')
     const [edit, setEdit] = useState(null)
     const [editText, setEditText] = useState('')
-
-
- 
 
 
     useEffect(() => {
@@ -69,9 +67,6 @@ const App = () => {
         setTodos(updateTodo)
     }
 
-    
-
-
     function editSubmit(id){
         const updateTodoss = [...todos].map((bago) => {
             if(bago.id === id){
@@ -85,7 +80,6 @@ const App = () => {
         setEditText('')
 
     }
-
     return ( 
         <div className="main">
             <div className='main__holder'>
@@ -95,20 +89,23 @@ const App = () => {
                     <button type='submit' className='plus__holder'>
                         <FontAwesomeIcon className='plus' icon={faPlusCircle}/>
                     </button>
-                    
-                    {/* <h1>hello I'm Reydel 😜 <br/>
-                 welcome to my todolist made in React 😎 <br/>
-                I hope u like it 👌</h1> */}
                 </form>
-                <div className='main__body'>
-                {todos.map((hey) => <div className={hey.status === true ? 'todoDone' : 'todoShit'} key={hey.id}>
-                    {edit === hey.id ? 
-                    (<input type='text' onChange={(e) => setEditText(e.target.value)} value={editText}>
-                    </input>) 
-                    : 
-                    (<div className='todo__title'>{hey.title}</div>)}
+                <div className='main__title' style={{
+                    textAlign: 'center',
+                }}>todolist 😜 <br />
+                    created by <span><a href="https://github.com/reydelshit" target="_blank" style={{
+                    textDecoration: 'none',
+                    color: 'hsl(172, 67%, 45%)'
+                }}>reydel ocon</a></span>
+                </div>
+              <div className='main__body'>
+                {todos.map((hey) =>  
+                <div className={hey.status === true ? 'todoDone' : 'todoShit'} key={hey.id}>
+                        {edit === hey.id ? 
+                        (<input type='text' onChange={(e) => setEditText(e.target.value)} value={editText}></input>)
+                        :  (<div className='todo__title'>{hey.title}</div>)}
 
-                    <div className='todos__feature'>
+                        <div className='todos__feature'>
                         <input type='checkbox' onChange={() => update(hey.id)} checked={hey.status}>
                         </input>
                         <button onClick={() => setEdit(hey.id)}>
@@ -127,6 +124,7 @@ const App = () => {
                 </div>
             </div>
         </div>
+        
      );
 }
  

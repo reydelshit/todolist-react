@@ -34,6 +34,7 @@ body{
 
 .main{
 
+   
     width: 30rem;
     height: 35rem;
     border: 1px solid var(--main-cyan);
@@ -116,7 +117,7 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 3rem;
+    height: clamp(3rem, 3vw, fit-content);
     width: 100%;
     color: var(--White);
     font-weight: 400;
@@ -131,7 +132,7 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 3rem;
+    height: clamp(3rem, 3vw, fit-content);
     width: 100%;
     color: var(--White);
     font-weight: 400;
@@ -150,15 +151,15 @@ button{
     background-color: var(--semi-cyan);
     z-index: 1;
     width: 70%;
-    height: 2px;
+    height: 4px;
 
 }
 
 
-.todoShit input[type='text']{
+.todoShit input[type='text'], .todoDone input[type='text']{
 
     width: 75%;
-    height: 100%;
+    height: 2rem;
     padding: 1em;
     cursor: auto;
     outline: none;
@@ -166,6 +167,7 @@ button{
     border-radius: 6px;
     background: var(--semilight-grayish-cyan);
 }
+
 
 .todoShit input[type='checkbox'], .todoDone input[type='checkbox']{
 
@@ -183,9 +185,11 @@ button{
 
 .todo__title{
 
-    width: 100%;
+    width: 75%;
     height: 100%;
     font-size: 1rem;
+    flex-wrap: wrap;
+    word-wrap: break-word;
 }
 
 .todos__feature {
@@ -231,16 +235,58 @@ button{
     color: var(--main-cyan);
 }
 
-@media screen and (max-width: 700px) and (min-width: 280px){
+footer{
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    border-bottom: 1px solid var(--main-cyan);
+}
+footer a:hover{
     
+    color: var(--main-cyan);
+}
+
+
+@media screen and (max-width: 700px){
+    
+    body{
+        padding: 0.5em;
+    }
+
     .main{
         width: 100%;
     }
     .plus__holder{
         right: 10px;
     }
+
+    .main__body{
+        width: 85vw;
+    }
+
+    .todoShit, .todoDone{
+
+       width: 100%;
+    }
     .todoDone::before{
         
-        width: 50%;
+        width: 60%;
     }
+
+    .todos__feature {
+
+        width: 28%;
+    }
+    
+    .todoDone input[type='text']{
+
+        width: 60%;
+        height: 2rem;
+        padding: 1em;
+    }
+    
 }
