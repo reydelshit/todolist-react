@@ -5,7 +5,7 @@ const Footer = () => {
         
         <div>
             <footer>
-                <span>check the code on my <a href="#">Github</a></span>
+                <span>check the code on my <a href="https://github.com/reydelshit">Github</a></span>
             </footer>
         </div>
      );

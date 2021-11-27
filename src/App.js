@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
-import Footer from './Footer'
 
 import { faTrash, faEdit, faPaperPlane, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -93,7 +92,7 @@ const App = () => {
                 <div className='main__title' style={{
                     textAlign: 'center',
                 }}>todolist 😜 <br />
-                    created by <span><a href="https://github.com/reydelshit" target="_blank" style={{
+                    created by <span><a href="https://github.com/reydelshit" target="_blank" rel="noreferrer" style={{
                     textDecoration: 'none',
                     color: 'hsl(172, 67%, 45%)'
                 }}>reydel ocon</a></span>
