@@ -14,6 +14,7 @@
     --main-font-poppins345: 'Poppins', sans-serif;
 
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -112,7 +113,7 @@ button{
 
 /* ///////////////// */
 
-.todoShit{
+.todoShit, .todoDone{
 
     display: flex;
     flex-direction: row;
@@ -125,22 +126,6 @@ button{
     border-radius: 5px;
     padding: 0.7em 1em;
     position: relative;
-}
-
-.todoDone{
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: clamp(3rem, 3vw, fit-content);
-    width: 100%;
-    color: var(--White);
-    font-weight: 400;
-    background-color: var(--very-dark-cyan);
-    border-radius: 5px;
-    padding: 0.7em 1em;
-    position: relative;
-
 }
 
 .todoDone::before{
@@ -187,8 +172,6 @@ button{
 
     width: 75%;
     height: 100%;
-    font-size: 1rem;
-    flex-wrap: wrap;
     word-wrap: break-word;
 }
 
