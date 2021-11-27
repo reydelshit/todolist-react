@@ -248,9 +248,7 @@ footer a:hover{
     }
 
     .main__body{
-
-    padding: 0 0.6rem 0 0;
-        width: 95vw;
+        width: 85vw;
     }
 
     .todoShit, .todoDone{
